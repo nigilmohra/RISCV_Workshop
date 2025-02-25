@@ -57,3 +57,7 @@ This is a simple **8-Bit Free Running Counter**.
 The Makerchip IDE uses the open-source Verilator for simulation. It supports only two-state simulation and does not support don't care or high impedance states. The simulator will zero-extend or truncate when widths are mismatched.
 
 ### Lab : Sequential Calculator
+
+## Pipelined Logic
+
+Transaction-Level Verilog allows modeling of a design as timing abstracts. The following is a pipeline implementation of the **32-Bit Pythagorean Theorem**, which uses the timing-abstract concept. The green lines represent registers.
