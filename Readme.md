@@ -29,7 +29,7 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
 
 ## Sequential Logic
 
-The Fibonacci series is provided as an example for the sequential circuits. The circuit is constructed such that it enters the known state when a `RESET` signal is present. For the Fibonacci code, the known state is `1`. The syntax `>>1` provides the previous value of `$val`, and `>>2` provides the value of `$val` two states prior. Similarly, `>>x` will provide the value of `$val` `x` cycles prior.
+Once the combinational circuits are completed, the next step is to move on to the sequential circuits. A basic Fibonacci series is provided as an example for the sequential circuits. The circuit is constructed such that it enters the known state when a `RESET` signal is present. For the Fibonacci code, the known state is `1`. The syntax `>>1` provides the previous value of `$val`, and `>>2` provides the value of `$val` two states prior. Similarly, `>>x` will provide the value of `$val` `x` cycles prior.
 
 ```Verilog
 \TLV
@@ -89,7 +89,7 @@ Transaction-Level Verilog allows modeling of a design as timing abstracts. The f
 
 Note that stage one can be separated into two separate stages, and the impact on the behavior of the circuit does not change. The pipeline stages are a physical attribute. TL-Verilog is far more flexible than SystemVerilog and avoids retiming issues.
 
-### Retiming the Pipeline : Pythagorean Theorem
+### Retiming the Pipeline : Pythagorean Theorem Example
 
 ```Verilog
 \TLV
