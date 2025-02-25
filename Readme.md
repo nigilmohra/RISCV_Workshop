@@ -221,3 +221,31 @@ A `VALID` signal is used to determine whether the distance is valid. If it is no
 |   Figure 7. Pipelined Calculator with Single Value Memory - Makechip IDE Output    |
 
 *Lecture on Brief introduction on Hierarchy and Lexical Re-entrance using Conway's Game of Life is Skipped.*
+
+# Basic RISC-V CPU Micro-Architecture
+
+The RISC-V Shell can be found in the GitHub repository by Steve Hoover. 
+
+## Fetch Address and Instruction
+
+### Program Counter and Instruction Memory
+
+```Verilog
+\TLV
+
+   |prg_cnt
+      @0
+         $reset = *reset;
+         $pc[31:0] = (>>1$reset) ? '0 : >>1$pc + 32'h4;
+```
+
+For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+cpu_viz(@4)`. Then `INST_MEM_EN` is activated in complement with the previous value of the `RST`. 
+
+```Verilog
+// Below the Program Counter Statement
+         $imem_rd_en         = !>>1reset ? 1 : 0;
+         $imem_rd_addr[31:0] = $pc[M4_IMEM_INDEX_CNT+1:2];
+
+      @1
+         $instr[31:0] = $imem_rd_data[31:0];
+```
