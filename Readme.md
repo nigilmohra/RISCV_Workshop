@@ -60,3 +60,7 @@ The Makerchip IDE uses the open-source Verilator for simulation. It supports onl
 ## Pipelined Logic
 
 Transaction-Level Verilog allows modeling of a design as timing abstracts. The following is a pipeline implementation of the **32-Bit Pythagorean Theorem**, which uses the timing-abstract concept. The green lines represent registers.
+
+| ![[Pythagorean Theorem Timing Abstract Diagram.png]] |
+| :--------------------------------------------------: |
+|           Architecture - A Simple Pipeline           |
