@@ -44,7 +44,7 @@ This is a simple **8-Bit Free Running Counter**.
    
    |calc
       @0
-!        $reset = *reset;
+         $reset = *reset;
  
          $cnt[7:0] = $reset ? 0 : (>>1$cnt + 1);
          
