@@ -29,8 +29,6 @@
    
    *passed = *cyc_cnt > 50;
    *failed = 1'b0; 
-```
-   
 
 \SV
    endmodule
