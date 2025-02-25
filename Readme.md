@@ -223,7 +223,7 @@ The [RISC-V Shell](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/mast
 ```Verilog
 \TLV
 
-   |prg_cnt
+   |cpu
       @0
          $reset = *reset;
          $pc[31:0] = (>>1$reset) ? '0 : >>1$pc + 32'h4;
@@ -253,7 +253,7 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
 |  Instruction Types for RISC-V Processor   |
 
 ```Verilog
-     // Below Instruction Fetch Assignment
+// Below Instruction Fetch Assignment
 
          $is_i_instr = $instr[6:2] == ? 5'b0000x || 5'b001x0 || 5'b11001;
          $is_r_instr = $instr[6:2] == ? 5'b01011 || 5'b011x0 || 5'b10100;
