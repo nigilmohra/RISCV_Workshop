@@ -243,7 +243,7 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
 
 ```Verilog
 // Below the Program Counter Statement
-         $imem_rd_en         = !>>1reset ? 1 : 0;
+         $imem_rd_en         = !>>1$reset ? 1 : 0;
          $imem_rd_addr[31:0] = $pc[M4_IMEM_INDEX_CNT+1:2];
 
       @1
