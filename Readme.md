@@ -39,7 +39,6 @@ This is a simple **8-Bit Free Running Counter**.
 ```Verilog
 \TLV
    
-   // Nigil
    // 8-Bit Free Running Counter
    
    |calc
