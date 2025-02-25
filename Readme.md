@@ -244,7 +244,9 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
 | :------------------------------------: |
 |   Figure 8. Fetch Address from Program Counter and Instruction Data - Makechip IDE Output    |
 
-## Decode Instruction Type
+## Decode Instructions
+
+### Decode Instruction Type
 
 `instr[6:2]` determines instruction type: I, R, S, B, J and U. **The simple idea behind instruction decode logic design is to eliminate common cases between different instructions and create instances that identify the type of instruction based on their differences. For example, the difference can be a single bit, which can be represented as don't-cares**.
 
@@ -262,3 +264,28 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
          $is_b_instr = $instr[6:2] == 5'b11000;
          $is_j_instr = $instr[6:2] == 5'b11011;
 ```
+
+### Decode Immediate Instructions
+
+Form `$imm[31:0]` based on the instruction type.
+
+|  ![IM10_Immediate_Instruction_Decode](https://github.com/user-attachments/assets/262dccf6-45df-42b8-9437-624f6a1ca88d) |
+| :------------------------------------: |
+|  Immediate Instruction Decode for RISC-V Processor   |
+
+```Verilog
+// Below Instruction Type Decode
+
+         $imm[31:0] = $is_i_instr   ? {{21{$instr[31]}}, $instr[30:20]} :
+                      $is_s_instr   ? {{21{$instr[31]}}, $instr[30:25], $instr[11:8], $instr[7]} :
+                      $is_b_instr   ? {{20{$instr[31]}}, $instr[7], $instr[30:25], $instr[11:8], 1'b0} :
+                      $is_u_instr   ? {$instr[31], $instr[30:20], $instr[19:12], 12'b0} :
+                      $is_j_instr   ? {{12{$instr[31]}}, $instr[19:12], $instr[20], $instr[30:21], 1'b0} :
+                      32'b0;        
+```
+
+### Decode - Extracting Instruction Fields
+
+| ![IM11_Extract_Instruction_Fields](https://github.com/user-attachments/assets/7872a044-c2e9-47cf-bd85-0763194185c3) |
+| :------------------------------------: |
+|  Immediate Instruction Decode for RISC-V Processor   |
