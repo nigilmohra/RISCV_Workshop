@@ -7,9 +7,9 @@ GitHub Repository Link : [Steve Hoover | RISCV Myth Workshop](https://github.com
 
 ## Introduction
 
-| ![Softening the Hardware (Onion)](https://github.com/user-attachments/assets/8671dd5d-9e25-4769-91c4-ee642466a42f) |
+| ![Combined Picture](https://github.com/user-attachments/assets/b34a6111-35d9-4d3a-a966-49f644e475bc) |
 | :--------------------------------------------------: |
-|           Softening the Hardware (Onion Layers)         |
+|           Softening the Hardware (Onion Layers) and Digital Machine Structure        |
 
 # Digital Logic Design with Transaction Level Verilog
 
