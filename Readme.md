@@ -55,3 +55,5 @@ This is a simple **8-Bit Free Running Counter**.
 ```
 
 The Makerchip IDE uses the open-source Verilator for simulation. It supports only two-state simulation and does not support don't care or high impedance states. The simulator will zero-extend or truncate when widths are mismatched.
+
+Lab : Sequential Calculator
