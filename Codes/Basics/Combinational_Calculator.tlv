@@ -9,6 +9,7 @@
 \TLV
 
    // Nigil
+   // Generating Random Numbers
 
    $val1[31:0] = $rand1[3:0];
    $val2[31:0] = $rand2[3:0];
