@@ -17,7 +17,7 @@
    // All Arithmetic Operations are Computed, then Output is Selected based on the OpCode.
 
    $sum[31:0]  = $val1 + $val2;
-   $diff[31:0]  = $val1 - $val2;
+   $diff[31:0] = $val1 - $val2;
    $prod[31:0] = $val1 * $val2;
    $quot[31:0] = $val1 / $val2;
 
