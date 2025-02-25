@@ -46,5 +46,4 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
    
    *passed = *cyc_cnt > 50;
    *failed = 1'b0;
-   
 ```
