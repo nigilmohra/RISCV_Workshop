@@ -164,3 +164,46 @@ The calculation happens in the first cycle, and in the second cycle, the outputs
 | ![IM05_Pipelined_Calculator](https://github.com/user-attachments/assets/0cc3b070-6d5b-4678-8a38-3d02605f35d9) |
 | :------------------------------------: |
 |   Figure 4. Two-Cycle (Pipelined) Calculator - Makechip IDE Output    |
+
+## Structure of TL-Verilog Code
+
+```
+\m4_TLV_version 1d: t1-x.org
+```
+
+The above line specifies the version of TL-Verilog, and `tl-x.org` provides the documentation link. `M4` is a macro language, which, when used, expands in the navigation window of the Maker chip IDE, defining the input, output, clock, and reset signals of the module.
+
+## Validity
+
+Validity offers easier debugging, cleaner design, better error checking, and automated clock gating. It allows Sandpiper to inject `DONT_CARES` when the inputs are not valid. The syntax of valid is `?$valid`.
+
+### Example : Accumulation of Distance
+
+```Verilog
+
+\TLV
+
+   |calc
+      @1
+         $reset = *reset;
+      
+      ?$valid
+         @1 // Stage
+            $aa_sq[31:0] = $aa[3:0] * $aa[3:0]; 
+            $bb_sq[31:0] = $bb[3:0] * $bb[3:0];
+         @2
+            $cc_sq[31:0] = $aa_sq + $bb_sq;
+         @3
+            $cc[31:0]    = sqrt($cc_sq);
+            
+      @4
+         $tot_dist[63:0] = $reset ? '0 :
+                           $valid ? >>1$tot_dist + $cc : // Accumulate
+                                    >>1$tot_dist;        // Retain
+```
+
+| ![IM07_Total_Distance](https://github.com/user-attachments/assets/38d13a7d-51af-4764-a600-0be68a41b0e7) |
+| :------------------------------------: |
+|   Figure 5. Total Distance Accumulator - Makechip IDE Output    |
+
+A `VALID` signal is used to determine whether the distance is valid. If it is not valid, the previous value of the distance is held. 
