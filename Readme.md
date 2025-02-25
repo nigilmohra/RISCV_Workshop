@@ -216,7 +216,7 @@ A `VALID` signal is used to determine whether the distance is valid. If it is no
 
 ### Lab : Calculator with Single-Value Memory
 
-| ![IM06_Memory_Calculator](https://github.com/user-attachments/assets/0873cb7d-6b50-4bd9-ad75-cdca9ded9a5b) |
+| ![IM06_Memory_Calculator](https://github.com/user-attachments/assets/21389f6a-2659-4470-ad7c-20234db75e23) |
 | :------------------------------------: |
 |   Figure 7. Pipelined Calculator with Single Value Memory - Makechip IDE Output    |
 
