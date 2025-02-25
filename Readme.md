@@ -3,6 +3,14 @@ This repository contains the documents, codes, and materials related to the RISC
 
 GitHub Repository Link : [Steve Hoover | RISCV Myth Workshop](https://github.com/stevehoover/RISC-V_MYTH_Workshop)
 
+# Introduction to RISC-V Instruction Set Architecture and GNU Compiler Tool Chain
+
+## Introduction
+
+| ![Softening the Hardware (Onion)](https://github.com/user-attachments/assets/8671dd5d-9e25-4769-91c4-ee642466a42f) |
+| :--------------------------------------------------: |
+|           Softening the Hardware (Onion Layers)         |
+
 # Digital Logic Design with Transaction Level Verilog
 
 For the initial simulation and design, the Makerchip IDE is used. Detailed explanations and guidance on using the IDE can be found here in this [Link](https://www.makerchip.com/sandbox/#)
