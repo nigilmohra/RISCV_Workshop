@@ -160,3 +160,7 @@ The `ERROR_SIGNALS` are OR together to check the various error conditions that c
 ### Lab : Two-Cycle Calculator
 
 The calculation happens in the first cycle, and in the second cycle, the outputs are assigned based on the `VALID SIGNAL`, which is determined by `$reset | !cnt`.
+
+| ![IM05_Pipelined_Calculator](https://github.com/user-attachments/assets/0cc3b070-6d5b-4678-8a38-3d02605f35d9) |
+| :------------------------------------: |
+|   Figure 4. Two-Cycle (Pipelined) Calculator - Makechip IDE Output    |
