@@ -22,7 +22,9 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
 ```
 ### Lab : Combinational Calculator
 
-![Uploading IM03_Sequential_Calculator.png…]()
+| ![IM01_Combinational_Calculator](https://github.com/user-attachments/assets/690332f4-02eb-4093-8dc1-a52af1964cc0) |
+| :--------------------------------------------------: |
+|           Architecture - A Simple Pipeline           |
 
 
 ## Sequential Logic
