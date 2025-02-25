@@ -64,3 +64,18 @@ Transaction-Level Verilog allows modeling of a design as timing abstracts. The f
 | ![Pythagorean Theorem Timing Abstract Diagram](https://github.com/user-attachments/assets/1740a233-43db-4dcc-9dea-993d84299544) |
 | :--------------------------------------------------: |
 |           Architecture - A Simple Pipeline           |
+
+```Verilog
+\TLV
+
+   |calc
+      @1 // Stage
+         $aa_sq[31:0] = $aa * $aa; 
+         $bb_sq[31:0] = $bb * $bb;
+      @2
+         $cc_sq[31:0] = $aa_sq + $bb_sq;
+      @3
+         $cc[31:0] = sqrt($cc_sq);
+```
+
+Note that stage one can be separated into two separate stages, and the impact on the behavior of the circuit does not change. The pipeline stages are a physical attribute. TL-Verilog is far more flexible than SystemVerilog and avoids retiming issues.
