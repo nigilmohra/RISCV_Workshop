@@ -79,3 +79,72 @@ Transaction-Level Verilog allows modeling of a design as timing abstracts. The f
 ```
 
 Note that stage one can be separated into two separate stages, and the impact on the behavior of the circuit does not change. The pipeline stages are a physical attribute. TL-Verilog is far more flexible than SystemVerilog and avoids retiming issues.
+
+### Retiming the Pipeline : Pythagorean Theorem
+
+```Verilog
+\TLV
+
+   // Design Under Test
+
+   |calc
+      @1 // Stage
+         $aa_sq[31:0] = $aa * $aa; 
+         $bb_sq[31:0] = $bb * $bb;
+      @2
+         $cc_sq[31:0] = $aa_sq + $bb_sq;
+      @3
+         $cc[31:0] = sqrt($cc_sq);
+
+```
+
+| ![Pipeline with Simple Retiming](https://github.com/user-attachments/assets/3398c19d-242e-4f03-8f20-60c40e14f2db) |
+| :------------------------------------: |
+|   Architecture - A Retimed Pipeline    |
+
+### Identifiers and Types
+
+The type of an identifier is determined by its symbol prefix and case/delimitation style. The first token must always start with two alphabet characters. Numbers cannot appear at the beginning of the tokens; they can only be at the end or in the middle. This should not be confused with number identifiers like `>>1`.
+
+| Token Name    | Signal Type     |
+| ------------- | --------------- |
+| `$lower_case` | Pipeline Signal |
+| `$CamelCase`  | State Signal    |
+| `$UPPER_CASE` | Keyword Signal  |
+
+### Fibonacci Series in Pipeline
+
+```Verilog
+\TLV
+
+   |fib
+      @1
+         $num[31:0] = *reset ? 1 : (>>1$num + >>2$num);
+```
+
+### Lab : Error Conditions Within Computation Pipeline
+
+The `ERROR_SIGNALS` are OR together to check the various error conditions that can occur within a computational pipeline.
+
+```Verilog
+\TLV
+
+   // Error in Pipeline
+
+   |error
+      @1
+         $err1 = $bad_input || $illegal_op;
+      @3
+         $err2 = $over_flow || $err1;
+      @6
+         $err3 = $div_by_zero || $err2;
+
+   // Limiting Testing Cycles
+   
+   *passed = *cyc_cnt > 10;
+   *failed = 1'b0;
+```
+
+### Lab : Two-Cycle Calculator
+
+The calculation happens in the first cycle, and in the second cycle, the outputs are assigned based on the `VALID SIGNAL`, which is determined by `$reset | !cnt`.
