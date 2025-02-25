@@ -249,3 +249,6 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
       @1
          $instr[31:0] = $imem_rd_data[31:0];
 ```
+| ![IM09_Fetch_PC_InMem](https://github.com/user-attachments/assets/a1d4988a-09be-4f58-ac49-0c194d49a4b0) |
+| :------------------------------------: |
+|   Figure 8. Fetch Address from Program Counter and Instruction Data - Makechip IDE Output    |
