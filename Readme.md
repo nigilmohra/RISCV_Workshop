@@ -212,4 +212,12 @@ A `VALID` signal is used to determine whether the distance is valid. If it is no
 
 | ![IM08_Calculator_Validated](https://github.com/user-attachments/assets/63dd24f1-b368-4240-8841-477e45bbd24d) | 
 | :------------------------------------: |
-|   Figure 6. Calculator with Validity Condition - Makechip IDE Output    |
+|   Figure 6. Pipelined Calculator with Validity Condition - Makechip IDE Output    |
+
+### Lab : Calculator with Single-Value Memory
+
+| ![IM06_Memory_Calculator](https://github.com/user-attachments/assets/0873cb7d-6b50-4bd9-ad75-cdca9ded9a5b) |
+| :------------------------------------: |
+|   Figure 7. Pipelined Calculator with Single Value Memory - Makechip IDE Output    |
+
+*Lecture on Brief introduction on Hierarchy and Lexical Re-entrance using Conway's Game of Life is Skipped.*
