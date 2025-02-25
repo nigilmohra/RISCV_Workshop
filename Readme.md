@@ -24,7 +24,7 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
 
 | ![IM01_Combinational_Calculator](https://github.com/user-attachments/assets/690332f4-02eb-4093-8dc1-a52af1964cc0) |
 | :--------------------------------------------------: |
-|           Figure 2. Combinational Calculator - Makerchip IDE Output          |
+|           Figure 1. Combinational Calculator - Makerchip IDE Output          |
 
 
 ## Sequential Logic
@@ -64,7 +64,7 @@ The Makerchip IDE uses the open-source Verilator for simulation. It supports onl
 
 | ![IM03_Sequential_Calculator](https://github.com/user-attachments/assets/cada27b6-bcb6-45d5-adfb-75f9a026231d) |
 | :--------------------------------------------------: |
-|           Figure 1. Sequential Calculator - Makerchip IDE Output          |
+|           Figure 2. Sequential Calculator - Makerchip IDE Output          |
 
 ## Pipelined Logic
 
@@ -153,6 +153,9 @@ The `ERROR_SIGNALS` are OR together to check the various error conditions that c
    *passed = *cyc_cnt > 10;
    *failed = 1'b0;
 ```
+|  ![IM04_Errors_Pipeline](https://github.com/user-attachments/assets/7f9a06bf-fe4c-481e-abf3-48bcb6f3c51e) |
+| :------------------------------------: |
+|   Figure 3. Errors in Pipeline During Computation - Makerchip IDE Output (Excercise)    |
 
 ### Lab : Two-Cycle Calculator
 
