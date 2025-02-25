@@ -207,3 +207,9 @@ Validity offers easier debugging, cleaner design, better error checking, and aut
 |   Figure 5. Total Distance Accumulator - Makechip IDE Output    |
 
 A `VALID` signal is used to determine whether the distance is valid. If it is not valid, the previous value of the distance is held. 
+
+### Lab : Two Cycle Calculator with Validity
+
+| ![IM08_Calculator_Validated](https://github.com/user-attachments/assets/63dd24f1-b368-4240-8841-477e45bbd24d) | 
+| :------------------------------------: |
+|   Figure 6. Calculator with Validity Condition - Makechip IDE Output    |
