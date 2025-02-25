@@ -97,12 +97,12 @@ Note that stage one can be separated into two separate stages, and the impact on
    // Design Under Test
 
    |calc
-      @1 // Stage
+      @2 // Stage
          $aa_sq[31:0] = $aa * $aa; 
          $bb_sq[31:0] = $bb * $bb;
-      @2
+      @4
          $cc_sq[31:0] = $aa_sq + $bb_sq;
-      @3
+      @6
          $cc[31:0] = sqrt($cc_sq);
 
 ```
@@ -111,7 +111,7 @@ Note that stage one can be separated into two separate stages, and the impact on
 | :------------------------------------: |
 |   Architecture - A Retimed Pipeline    |
 
-### Identifiers and Types
+### Identifiers and Types (Misc)
 
 The type of an identifier is determined by its symbol prefix and case/delimitation style. The first token must always start with two alphabet characters. Numbers cannot appear at the beginning of the tokens; they can only be at the end or in the middle. This should not be confused with number identifiers like `>>1`.
 
@@ -121,19 +121,9 @@ The type of an identifier is determined by its symbol prefix and case/delimitati
 | `$CamelCase`  | State Signal    |
 | `$UPPER_CASE` | Keyword Signal  |
 
-### Fibonacci Series in Pipeline
-
-```Verilog
-\TLV
-
-   |fib
-      @1
-         $num[31:0] = *reset ? 1 : (>>1$num + >>2$num);
-```
-
 ### Lab : Error Conditions Within Computation Pipeline
 
-The `ERROR_SIGNALS` are OR together to check the various error conditions that can occur within a computational pipeline.
+The `ERROR_SIGNALS` are OR together to check the various error conditions that can occur within a computational pipeline. The idea of this exercise is to develop a visual understanding of how the TL-Verilog code is translated into the diagram / architecture in the visualization pane. 
 
 ```Verilog
 \TLV
@@ -157,7 +147,7 @@ The `ERROR_SIGNALS` are OR together to check the various error conditions that c
 | :------------------------------------: |
 |   Figure 3. Errors in Pipeline During Computation - Makerchip IDE Output (Excercise)    |
 
-### Lab : Two-Cycle Calculator
+### Lab : Two-Cycle Calculator (Pipeline)
 
 The calculation happens in the first cycle, and in the second cycle, the outputs are assigned based on the `VALID SIGNAL`, which is determined by `$reset | !cnt`.
 
@@ -165,7 +155,7 @@ The calculation happens in the first cycle, and in the second cycle, the outputs
 | :------------------------------------: |
 |   Figure 4. Two-Cycle (Pipelined) Calculator - Makechip IDE Output    |
 
-## Structure of TL-Verilog Code
+## Structure of TL-Verilog Code (Misc)
 
 ```
 \m4_TLV_version 1d: t1-x.org
