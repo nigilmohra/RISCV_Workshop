@@ -253,7 +253,7 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
 | :------------------------------------: |
 |   Figure 8. Fetch Address from Program Counter and Instruction Data - Makechip IDE Output    |
 
-## Instruction Decode Logic
+## Decode Instruction Type
 
 `instr[6:2]` determines instruction type: I, R, S, B, J and U
 
