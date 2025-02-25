@@ -248,7 +248,7 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
 
 `instr[6:2]` determines instruction type: I, R, S, B, J and U. **The simple idea behind instruction decode logic design is to eliminate common cases between different instructions and create instances that identify the type of instruction based on their differences. For example, the difference can be a single bit, which can be represented as don't-cares**.
 
-|  ![Instruction Decode Logic Design](https://github.com/user-attachments/assets/78d38eda-7388-43e3-a1cc-3ba984d5c495) |
+| ![IM09_Instruction_Type_Decode](https://github.com/user-attachments/assets/139957d1-5f09-428e-9090-f4d1769468a5) |
 | :------------------------------------: |
 |  Instruction Types for RISC-V Processor   |
 
