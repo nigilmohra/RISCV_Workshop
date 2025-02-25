@@ -22,6 +22,10 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
 ```
 ### Lab : Combinational Calculator
 
+|![IM01_Combinational_Calculator](https://github.com/user-attachments/assets/21b5e415-0636-4135-ac18-819bc443de72)|
+| :------------------------------------: |
+|   Fig 1. Combinational Calculator - Makerchip IDE Output    |
+
 ## Sequential Logic
 
 The Fibonacci series is provided as an example for the sequential circuits. The circuit is constructed such that it enters the known state when a `RESET` signal is present. For the Fibonacci code, the known state is `1`. The syntax `>>1` provides the previous value of `$val`, and `>>2` provides the value of `$val` two states prior. Similarly, `>>x` will provide the value of `$val` `x` cycles prior.
