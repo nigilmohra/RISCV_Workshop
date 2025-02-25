@@ -252,3 +252,11 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
 | ![IM09_Fetch_PC_InMem](https://github.com/user-attachments/assets/a1d4988a-09be-4f58-ac49-0c194d49a4b0) |
 | :------------------------------------: |
 |   Figure 8. Fetch Address from Program Counter and Instruction Data - Makechip IDE Output    |
+
+## Instruction Decode Logic
+
+`instr[6:2]` determines instruction type: I, R, S, B, J and U
+
+|  ![Instruction Decode Logic Design](https://github.com/user-attachments/assets/78d38eda-7388-43e3-a1cc-3ba984d5c495) |
+| :------------------------------------: |
+|  Instruction Types for RISC-V Processor   |
