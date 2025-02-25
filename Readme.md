@@ -224,7 +224,7 @@ A `VALID` signal is used to determine whether the distance is valid. If it is no
 
 # Basic RISC-V CPU Micro-Architecture
 
-The RISC-V Shell can be found in the GitHub repository by Steve Hoover. 
+The [RISC-V Shell](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/risc-v_shell.tlv) can be found in the GitHub repository by Steve Hoover. 
 
 ## Fetch Address and Instruction
 
