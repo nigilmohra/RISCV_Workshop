@@ -33,3 +33,26 @@ The Fibonacci series is provided as an example for the sequential circuits. The 
 
    $num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
 ```
+
+This is a simple **8-Bit Free Running Counter**.
+
+```Verilog
+\TLV
+   
+   // Nigil
+   
+   // 8-Bit Free Running Counter
+   
+   |calc
+      @0
+!        $reset = *reset;
+ 
+         $cnt[7:0] = $reset ? 0 : (>>1$cnt + 1);
+         
+   // Limiting Simulation
+   
+   *passed = *cyc_cnt > 20;
+   *failed = 1'b0;
+```
+
+The Makerchip IDE uses the open-source Verilator for simulation. It supports only two-state simulation and does not support don't care or high impedance states. The simulator will zero-extend or truncate when widths are mismatched.
