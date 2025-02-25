@@ -26,6 +26,7 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
 \TLV
 
    // Nigil
+   // Generate Random Vectors
 
    $val1[31:0] = $rand1[3:0];
    $val2[31:0] = $rand2[3:0];
