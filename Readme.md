@@ -24,7 +24,7 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
 
 |![IM01_Combinational_Calculator](https://github.com/user-attachments/assets/21b5e415-0636-4135-ac18-819bc443de72)|
 | :------------------------------------: |
-|   Fig 1. Combinational Calculator - Makerchip IDE Output    |
+|   Figure 1. Combinational Calculator - Makerchip IDE Output    |
 
 ## Sequential Logic
 
