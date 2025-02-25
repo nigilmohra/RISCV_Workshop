@@ -7,7 +7,7 @@ GitHub Repository Link : [Steve Hoover | RISCV Myth Workshop](https://github.com
 
 ## Introduction
 
-| ![Softening the Hardware (Onion)](https://github.com/user-attachments/assets/8671dd5d-9e25-4769-91c4-ee642466a42f|width=100) |
+| ![Softening the Hardware (Onion)](https://github.com/user-attachments/assets/8671dd5d-9e25-4769-91c4-ee642466a42f) |
 | :--------------------------------------------------: |
 |           Softening the Hardware (Onion Layers)         |
 
