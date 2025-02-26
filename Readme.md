@@ -3,7 +3,7 @@ This repository contains the documents, codes, and materials related to the RISC
 
 GitHub Repository Link : [Steve Hoover | RISCV Myth Workshop](https://github.com/stevehoover/RISC-V_MYTH_Workshop). The reference solutions for the lab and practices can be found in this [Solution](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/reference_solutions.tlv). The solutions do not include code; they include only the design visualizations.
 
-# Introduction to Machine Structure, GNU Compiler Tool Chain and Spike Simulator
+# Introduction to RISC-V Instruction Set using GNU Compiler Tool Chain and Spike Simulator
 
 | ![Combined Picture](https://github.com/user-attachments/assets/177470e5-b616-44f9-9bcc-009d7b61a476) |
 | :--------------------------------------------------: |
@@ -17,7 +17,7 @@ The **Spike Simulator** is an **Instruction Set Simulator** specifically design 
 
 Create a small `C` program that performs the addition of numbers from 1 to `N`. Run the program using the commands `gcc <FILE_NAME.c>` and `./a.out`.
 
-**Generate RISC-V Object File**
+## Generate RISC-V Object File
 
 Either one of the above two codes can be used to generate the object file. The explanation of the shell commands can be found in the internet.
 
@@ -33,7 +33,7 @@ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <
 | :--------------------------------------------------: |
 |           Assembly Language Codes - Sum of 'N' Numbers (-Ofast)        |
 
-**Assembly Code**
+## Assembly Code
 
 The first command provides an extended version of the assembly code. The second command will provide a `piped` version of the code.
 
@@ -45,7 +45,7 @@ riscv64-unknown-elf-objdump -d sum.o
 riscv64-unknown-elf-objdump -d sum.o | less
 ```
 
-**Debugging**
+## Debugging - Spike Simulator
 
 The Spike simulator is invoked using the spike disassemble command. By using the `until` command, the program can be executed starting from a particular address. Pressing `ENTER` executes the consecutive steps. The updates to the registers can be viewed using the `reg` command. 
 
