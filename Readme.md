@@ -3,7 +3,11 @@ This repository contains the documents, codes, and materials related to the RISC
 
 GitHub Repository Link : [Steve Hoover | RISCV Myth Workshop](https://github.com/stevehoover/RISC-V_MYTH_Workshop). The reference solutions for the lab and practices can be found in this [Solution](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/reference_solutions.tlv). The solutions do not include code; they include only the design visualizations.
 
-# Introduction to GNU Compiler Tool Chain and Spike Simulator
+# Introduction to Machine Structure, GNU Compiler Tool Chain and Spike Simulator
+
+| ![Combined Picture](https://github.com/user-attachments/assets/177470e5-b616-44f9-9bcc-009d7b61a476) |
+| :--------------------------------------------------: |
+|           Softening the Hardware (Onion Layers) and Digital Machine Structure        |
 
 The idea is to implement different `C` programs, convert them to object code (which is the assembly language), and run them using the RISC-V compiler built into the GNU Compiler Collection (GCC). Then, debugging is done using the Spike Simulator to develop a basic understanding of the Instruction Set Architecture (ISA) and how high-level language code is broken down into multiple instructions.
 
@@ -24,6 +28,10 @@ riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <C_P
 ```bash
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <C_PRG_FILE_NAME.c>
 ```
+
+| ![IM01 Assembly Code](https://github.com/user-attachments/assets/e6d4811b-7f98-4dc0-898f-0118cc69d539) |
+| :--------------------------------------------------: |
+|           Assembly Language Codes - Sum of 'N' Numbers (-Ofast)        |
 
 **Assembly Code**
 
@@ -54,11 +62,6 @@ spike -d pk <OBJECT_FILE_NAME.o>
 ```bash
 (spike) reg <CORE> <REGISTER_NAME>
 ```
-
-
-| ![Combined Picture](https://github.com/user-attachments/assets/177470e5-b616-44f9-9bcc-009d7b61a476) |
-| :--------------------------------------------------: |
-|           Softening the Hardware (Onion Layers) and Digital Machine Structure        |
 
 # Digital Logic Design with Transaction Level Verilog
 
