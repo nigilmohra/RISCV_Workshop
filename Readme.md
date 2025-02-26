@@ -307,16 +307,16 @@ Form `$imm[31:0]` based on the instruction type.
          $funct3_valid = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
          $funct7_valid = $is_r_instr;
 
-         $opcode[6:0] = $instr[6:0];
+         $opcode[6:0]    = $instr[6:0];
 
          ?$rs1_valid
-            $rs1[4:0] = $instr[19:15];
+            $rs1[4:0]    = $instr[19:15];
 
          ?$rs2_valid
-            $rs2[4:0] = $instr[24:20];
+            $rs2[4:0]    = $instr[24:20];
 
          ?$rd_valid
-            $rd[4:0] = $instr[11:7];
+            $rd[4:0]     = $instr[11:7];
 
          ?$funct3_valid
             $funct3[2:0] = $instr[14:12];
