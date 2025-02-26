@@ -29,10 +29,6 @@ riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <C_P
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <C_PRG_FILE_NAME.c>
 ```
 
-| ![IM01 Assembly Code](https://github.com/user-attachments/assets/e6d4811b-7f98-4dc0-898f-0118cc69d539) |
-| :--------------------------------------------------: |
-|           Assembly Language Codes - Sum of 'N' Numbers (-Ofast)        |
-
 ## Assembly Code
 
 The first command provides an extended version of the assembly code. The second command will provide a `piped` version of the code.
@@ -44,6 +40,10 @@ riscv64-unknown-elf-objdump -d sum.o
 ```bash
 riscv64-unknown-elf-objdump -d sum.o | less
 ```
+
+| ![IM01 Assembly Code](https://github.com/user-attachments/assets/e6d4811b-7f98-4dc0-898f-0118cc69d539) |
+| :--------------------------------------------------: |
+|           Assembly Language Codes - Sum of 'N' Numbers (-Ofast)        |
 
 ## Debugging - Spike Simulator
 
@@ -62,6 +62,10 @@ spike -d pk <OBJECT_FILE_NAME.o>
 ```bash
 (spike) reg <CORE> <REGISTER_NAME>
 ```
+
+|![IM02 Spike Simulator](https://github.com/user-attachments/assets/0a93b620-156a-498c-86a5-0b9d64bcc7dc) |
+| :--------------------------------------------------: |
+|           Debugging using Spike Simulator       |
 
 # Digital Logic Design with Transaction Level Verilog
 
