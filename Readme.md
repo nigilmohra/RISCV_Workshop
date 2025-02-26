@@ -19,7 +19,7 @@ Create a small `C` program that performs the addition of numbers from 1 to `N`. 
 
 ## Generate RISC-V Object File
 
-Either one of the above two codes can be used to generate the object file. The explanation of the shell commands can be found in the internet.
+Either one of the above two codes can be used to generate the object file. 
 
 ```bash
 riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <C_PRG_FILE_NAME.c>
@@ -44,6 +44,8 @@ riscv64-unknown-elf-objdump -d sum.o | less
 | ![IM01 Assembly Code](https://github.com/user-attachments/assets/e6d4811b-7f98-4dc0-898f-0118cc69d539) |
 | :--------------------------------------------------: |
 |           Assembly Language Codes - Sum of 'N' Numbers (-Ofast)        |
+
+_The explanation of the shell commands can be found on the internet. Lectures on signed and unsigned integers were viewed, but no notes were made._
 
 ## Debugging - Spike Simulator
 
