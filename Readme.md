@@ -1,7 +1,7 @@
 # RISC-V Design using Transaction-Level Verilog 
 This repository contains the documents, codes, and materials related to the RISC-V-based MYTH workshop, organized by NASSCOM India in collaboration with Steve Hoover and Kunal Ghosh. 
 
-_The reference solutions for the lab and practices can be found in this_ [Solution](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/reference_solutions.tlv). _The solutions do not include code; they include only the design visualizations._
+_The reference solutions for the lab and practices can be found in this_ [_Solution_](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/reference_solutions.tlv). _The solutions do not include code; they include only the design visualizations._
 
 # Introduction to RISC-V Instruction Set using GNU Compiler Tool Chain and Spike Simulator
 
