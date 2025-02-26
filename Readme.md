@@ -345,7 +345,7 @@ Form `$imm[31:0]` based on the instruction type.
          $is_addi = $dec_bits ==? 11'bx_000_0010011;
          $is_add  = $dec_bits ==? 11'b0_000_0110011;
 ```
-### Lab : RISC-V Fetch and Decode Design
+### Lab : Non-Pipelined Basic RISC-V Fetch and Decode Implementation
 
 |![IM13_RISCV_Fetch_Decode_Logics](https://github.com/user-attachments/assets/4dc26133-68d1-4510-9d61-55f0e6af015e)|
 | :------------------------------------: |
