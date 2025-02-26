@@ -45,7 +45,6 @@ riscv64-unknown-elf-objdump -d sum.o | less
 | :--------------------------------------------------: |
 |           Assembly Language Codes - Sum of 'N' Numbers (-Ofast)        |
 
-_The explanation of the shell commands can be found on the internet. Lectures on signed and unsigned integers were viewed, but no notes were made._
 
 ## Debugging - Spike Simulator
 
@@ -68,6 +67,8 @@ spike -d pk <OBJECT_FILE_NAME.o>
 |![IM02 Spike Simulator](https://github.com/user-attachments/assets/0a93b620-156a-498c-86a5-0b9d64bcc7dc) |
 | :--------------------------------------------------: |
 |           Debugging using Spike Simulator       |
+
+_The explanation of the shell commands can be found on the internet. Lectures on signed and unsigned integers were viewed, but no notes were made._
 
 # Digital Logic Design with Transaction Level Verilog
 
