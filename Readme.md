@@ -349,7 +349,7 @@ Form `$imm[31:0]` based on the instruction type.
 
 |![IM13_RISCV_Fetch_Decode_Logics](https://github.com/user-attachments/assets/4dc26133-68d1-4510-9d61-55f0e6af015e)|
 | :------------------------------------: |
-|  Figure 9. RISCV-32 Fetch and Decode Design - Makerchip IDE Output   |
+|  Figure 9. RISCV-32 Fetch and Decode Implementation - Makerchip IDE Output   |
 
 ### Register File Read and Write
 
@@ -430,7 +430,7 @@ Test the design using the following simple test bench statement.
          *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
 ```
 
-### Lab : Single-Cycle Basic RISC-V Micro-Architecture 
+### Lab : Single-Cycle Basic RISC-V32I Implementation
 
 |![IM_14_NPRISCV_Processor_Design](https://github.com/user-attachments/assets/dcc678f6-0b28-4367-b9f4-be7b452577db) |
 | :------------------------------------: |
