@@ -345,7 +345,7 @@ Form `$imm[31:0]` based on the instruction type.
          $is_addi = $dec_bits ==? 11'bx_000_0010011;
          $is_add  = $dec_bits ==? 11'b0_000_0110011;
 ```
-### Lab : Non-Pipelined Basic RISC-V Fetch and Decode Implementation
+### Lab : Single-Cycle Basic RISC-V Fetch and Decode Implementation
 
 |![IM13_RISCV_Fetch_Decode_Logics](https://github.com/user-attachments/assets/4dc26133-68d1-4510-9d61-55f0e6af015e)|
 | :------------------------------------: |
@@ -430,7 +430,7 @@ Test the design using the following simple test bench statement.
          *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
 ```
 
-### Lab : Non-Pipelined Basic RISC-V Micro-Architecture 
+### Lab : Single-Cycle Basic RISC-V Micro-Architecture 
 
 |![IM_14_NPRISCV_Processor_Design](https://github.com/user-attachments/assets/dcc678f6-0b28-4367-b9f4-be7b452577db) |
 | :------------------------------------: |
