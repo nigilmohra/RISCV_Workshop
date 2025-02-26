@@ -424,12 +424,6 @@ The Program Counter is modified to calculate the branch address based on the imm
          $br_tgt_pc = $pc + $imm;
 ```
 
-Test the design using the following simple test bench statement.
-
-```Verilog
-*passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
-```
-
 ### Lab : Single-Cycle RISC-V32I Implementation
 
 |![IM_14_NPRISCV_Processor_Design](https://github.com/user-attachments/assets/dcc678f6-0b28-4367-b9f4-be7b452577db) |
