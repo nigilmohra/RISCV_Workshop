@@ -329,4 +329,4 @@ Form `$imm[31:0]` based on the instruction type.
 
 |<img width="959" alt="RISC-V Basic Instruction Set" src="https://github.com/user-attachments/assets/b54373f7-7e29-477e-9a81-86cc220bc74d" />|
 | :------------------------------------: |
-|  Immediate Instruction Decode for RISC-V Processor   |
+|  RISCV-32 Basic Instruction Set   |
