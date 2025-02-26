@@ -297,3 +297,30 @@ Form `$imm[31:0]` based on the instruction type.
 | ![IM11_Extract_Instruction_Fields](https://github.com/user-attachments/assets/7872a044-c2e9-47cf-bd85-0763194185c3) |
 | :------------------------------------: |
 |  Immediate Instruction Decode for RISC-V Processor   |
+
+```Verilog
+// Below Immediate Instruction Decode, Note Immediate Instructions are Taken Care
+
+         $rs1_valid = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
+         $rs2_valid = $is_r_instr || $is_s_instr || $is_b_instr;
+         $rd_valid  = $is_r_instr || $is_i_instr || $is_u_instr || $is_j_instr;
+         $funct3_valid = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
+         $funct7_valid = $is_r_instr;
+
+         $opcode[6:0] = $instr[6:0];
+
+         ?$rs1_valid
+            $rs1[4:0] = $instr[19:15];
+
+         ?$rs2_valid
+            $rs2[4:0] = $instr[24:20];
+
+         ?$rd_valid
+            $rd[4:0] = $instr[11:7];
+
+         ?$funct3_valid
+            $funct3[2:0] = $instr[14:12];
+
+         ?$funct7_valid
+            $funct7[6:0] = $instr[31:25];
+```
