@@ -125,7 +125,7 @@ This is a simple **8-Bit Free Running Counter**.
    *failed = 1'b0;
 ```
 
-The Makerchip IDE uses the open-source Verilator for simulation. It supports only two-state simulation and does not support don't care or high impedance states. The simulator will zero-extend or truncate when widths are mismatched.
+_The Makerchip IDE uses the open-source Verilator for simulation. It supports only two-state simulation and does not support don't care or high impedance states. The simulator will zero-extend or truncate when widths are mismatched._
 
 ### Lab : Sequential Calculator
 
@@ -154,7 +154,7 @@ Transaction-Level Verilog allows modeling of a design as timing abstracts. The f
          $cc[31:0] = sqrt($cc_sq);
 ```
 
-Note that stage one can be separated into two separate stages, and the impact on the behavior of the circuit does not change. The pipeline stages are a physical attribute. TL-Verilog is far more flexible than SystemVerilog and avoids retiming issues.
+Stage one can be divided into two separate stages without affecting the behavior of the circuit. The pipeline stages are a physical attribute. TL-Verilog offers greater flexibility than SystemVerilog and helps avoid retiming issues.
 
 ### Retiming the Pipeline : Pythagorean Theorem Example
 
