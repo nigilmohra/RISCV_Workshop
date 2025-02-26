@@ -427,7 +427,7 @@ The Program Counter is modified to calculate the branch address based on the imm
 Test the design using the following simple test bench statement.
 
 ```Verilog
-         *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
+*passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
 ```
 
 ### Lab : Single-Cycle RISC-V32I Implementation
