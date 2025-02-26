@@ -330,3 +330,18 @@ Form `$imm[31:0]` based on the instruction type.
 |<img width="959" alt="RISC-V Basic Instruction Set" src="https://github.com/user-attachments/assets/b54373f7-7e29-477e-9a81-86cc220bc74d" />|
 | :------------------------------------: |
 |  RISCV-32 Basic Instruction Set   |
+
+```Verilog
+// Below Extract Instruction Fields Code
+
+         $dec_bits[10:0] = {$funct7[5], $funct3, $opcode};
+
+         $is_beq  = $dec_bits ==? 11'bx_000_1100011;
+         $is_bne  = $dec_bits ==? 11'bx_001_1100011;
+         $is_blt  = $dec_bits ==? 11'bx_100_1100011;
+         $is_bge  = $dec_bits ==? 11'bx_101_1100011;
+         $is_bltu = $dec_bits ==? 11'bx_110_1100011;
+         $is_bgeu = $dec_bits ==? 11'bx_111_1100011;
+         $is_addi = $dec_bits ==? 11'bx_000_0010011;
+         $is_add  = $dec_bits ==? 11'b0_000_0110011;
+```
