@@ -301,9 +301,9 @@ Form `$imm[31:0]` based on the instruction type.
 ```Verilog
 // Below Immediate Instruction Decode, Note Immediate Instructions are Taken Care
 
-         $rs1_valid = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
-         $rs2_valid = $is_r_instr || $is_s_instr || $is_b_instr;
-         $rd_valid  = $is_r_instr || $is_i_instr || $is_u_instr || $is_j_instr;
+         $rs1_valid    = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
+         $rs2_valid    = $is_r_instr || $is_s_instr || $is_b_instr;
+         $rd_valid     = $is_r_instr || $is_i_instr || $is_u_instr || $is_j_instr;
          $funct3_valid = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
          $funct7_valid = $is_r_instr;
 
