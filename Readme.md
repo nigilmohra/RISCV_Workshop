@@ -5,6 +5,57 @@ GitHub Repository Link : [Steve Hoover | RISCV Myth Workshop](https://github.com
 
 # Introduction to GNU Compiler Tool Chain and Spike Simulator
 
+The idea is to implement different `C` programs, convert them to object code (which is the assembly language), and run them using the RISC-V compiler built into the GNU Compiler Collection (GCC). Then, debugging is done using the Spike Simulator to develop a basic understanding of the Instruction Set Architecture (ISA) and how high-level language code is broken down into multiple instructions.
+
+Apart from standard C/C++ and Fortran language support, the **GCC Compiler** supports multiple architectures and platforms, including RISC-V, ARM, x86, and many others, enabling developers to write code on one platform and later compile it to run on others.
+
+The **Spike Simulator** is an **Instruction Set Simulator** specifically design for RISC-V, an open source instruction set architecture. It is an official simulator for RISC-V, used to model and simulate the processors. 
+
+Create a small `C` program that performs the addition of numbers from 1 to `N`. Run the program using the commands `gcc <FILE_NAME.c>` and `./a.out`.
+
+**Generate RISC-V Object File**
+
+Either one of the above two codes can be used to generate the object file. The explanation of the shell commands can be found in the internet.
+
+```bash
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <C_PRG_FILE_NAME.c>
+```
+
+```bash
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <C_PRG_FILE_NAME.c>
+```
+
+**Assembly Code**
+
+The first command provides an extended version of the assembly code. The second command will provide a `piped` version of the code.
+
+```bash
+riscv64-unknown-elf-objdump -d sum.o
+```
+
+```bash
+riscv64-unknown-elf-objdump -d sum.o | less
+```
+
+**Debugging**
+
+The Spike simulator is invoked using the spike disassemble command. By using the `until` command, the program can be executed starting from a particular address. Pressing `ENTER` executes the consecutive steps. The updates to the registers can be viewed using the `reg` command. 
+
+In the assembly code, by using the appropriate syntax, parts of the code can be easily navigated. For example, `/main` finds all instances of 'main,' and pressing 'n' repeatedly will help you find the correct instance.
+
+```bash
+spike -d pk <OBJECT_FILE_NAME.o>
+```
+
+```bash
+(spike) until pc 0 <ADDRESS_TILL_EXECUTION>
+```
+
+```bash
+(spike) reg <CORE> <REGISTER_NAME>
+```
+
+
 | ![Combined Picture](https://github.com/user-attachments/assets/177470e5-b616-44f9-9bcc-009d7b61a476) |
 | :--------------------------------------------------: |
 |           Softening the Hardware (Onion Layers) and Digital Machine Structure        |
