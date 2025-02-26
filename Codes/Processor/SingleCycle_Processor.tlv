@@ -20,16 +20,16 @@
 
    // Function
 
-   m4_asm(ADD, r14, r10, r0)            // Initialize sum register a4 with 0x0
-   m4_asm(ADDI, r12, r10, 1010)         // Store count of 10 in register a2.
-   m4_asm(ADD, r13, r10, r0)            // Initialize intermediate sum register a3 with 0
+   m4_asm(ADD, r14, r10, r0)            // Initialize Sum Reg a4 with 0x0
+   m4_asm(ADDI, r12, r10, 1010)         // Store Count of 10 in Reg a2.
+   m4_asm(ADD, r13, r10, r0)            // Initialize Intermediate Sum Reg a3 with 0
 
    // Loop
 
-   m4_asm(ADD, r14, r13, r14)           // Incremental addition
-   m4_asm(ADDI, r13, r13, 1)            // Increment intermediate register by 1
-   m4_asm(BLT, r13, r12, 1111111111000) // If a3 is less than a2, branch to label named <loop>
-   m4_asm(ADD, r10, r14, r0)            // Store final result to register a0 so that it can be read by main program
+   m4_asm(ADD, r14, r13, r14)           // Incremental Addition
+   m4_asm(ADDI, r13, r13, 1)            // Increment Intermediate Reg +1
+   m4_asm(BLT, r13, r12, 1111111111000) // If a3 is less than a2, Branch to Label Named <Loop>
+   m4_asm(ADD, r10, r14, r0)            // Store Result to Reg a0 
    
    // Optional
 
@@ -152,8 +152,8 @@
          // Branch Instruction Address Update
          
          $br_tgt_pc = $pc + $imm;
-         // Nigil
-         // Limit Simulation Cycle 
+
+         // Limit Simulation Cycle and Test
          
          *passed = *cyc_cnt > 10;
          *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
@@ -161,7 +161,6 @@
          
          `BOGUS_USE($is_beq $is_bne $is_blt $is_bge $is_bltu $is_bgeu)
          
-
    |cpu
       m4+imem(@1)      // Args: (Read)
       m4+rf(@1, @1)    // Args: (Read, Write) - Equal - No Register Bypass Required
