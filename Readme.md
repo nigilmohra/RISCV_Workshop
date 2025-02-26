@@ -350,3 +350,88 @@ Form `$imm[31:0]` based on the instruction type.
 |![IM13_RISCV_Fetch_Decode_Logics](https://github.com/user-attachments/assets/4dc26133-68d1-4510-9d61-55f0e6af015e)|
 | :------------------------------------: |
 |  Figure 9. RISCV-32 Fetch and Decode Design - Makerchip IDE Output   |
+
+### Register File Read and Write
+
+Use the decoded fields to write and read data to the registers. To generate the register file, uncomment the macro `m4+rf (@1, @1)`.
+
+|![Register File Design](https://github.com/user-attachments/assets/16b90172-7c21-4dae-86b0-19791497f5c3) |
+| :------------------------------------: |
+|  Dual-Read and Single Write Register File  |
+
+#### Read
+
+```Verilog
+// Below Basic Instruction Set Decode, Read
+
+         ?$rs1_valid
+            $rf_rd_en1    = $rs1_valid;
+            $rf_rd_index1 = $rs1;
+            
+         ?$rs2_valid
+            $rf_rd_en2    = $rs2_valid;
+            $rf_rd_index2 = $rs2;
+            
+         $src1_value[31:0] = $rf_rd_data1;
+         $src2_value[31:0] = $rf_rd_data2;
+```
+
+#### Write
+
+```Verilog
+         // Below Arithemtic and Logic Unit, Register Write
+
+         $rf_wr_en = ($rd == 5'h0) ? 1'b0 : $rd_valid;
+         
+         ?$rf_wr_en
+            $rf_wr_index = $rd;
+            
+         $rf_wr_data  = $result;       
+```
+
+### Simple Arithmetic and Logic Unit (ALU) Design
+
+```Verilog
+         // Arithmetic and Logic Unit, Below Register File
+
+         $result[31:0] = $is_addi ? $src1_value + $imm :
+                         $is_add  ? $src2_value + $src1_value : 32'bx;
+         
+```
+
+### Branch Instructions
+
+The Program Counter is modified to calculate the branch address based on the immediate value. If the `TAKEN_BRANCH` is high, the Program Counter is updated with the branch address; otherwise, the address is incremented by 4 by default.
+
+```Verilog
+
+         // Updated Program Counter
+
+         $pc[31:0] = (>>1$reset) ? '0 : >>1$taken_br ? >>1$br_tgt_pc : >>1$pc + 32'h4;
+
+         // Branch Instructions Check
+         
+         $taken_br = $is_beq  ? ($src1_value == $src2_value) :
+                     $is_bne  ? ($src1_value != $src2_value) :
+                     $is_blt  ? ($src1_value < $src2_value) ^ ($src1_value[31] != $src2_value[31]) :
+                     $is_bge  ? ($src1_value > $src2_value) ^ ($src1_value[31] != $src2_value[31]) :
+                     $is_bltu ? ($src1_value <= $src2_value) :
+                     $is_bgeu ? ($src1_value >= $src2_value) :
+                     1'b0;
+                     
+         // Branch Instruction Address Update
+         
+         $br_tgt_pc = $pc + $imm;
+```
+
+Test the design using the following simple test bench statement.
+
+```Verilog
+         *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
+```
+
+### Lab : Non-Pipelined Basic RISC-V Micro-Architecture 
+
+|![IM_14_NPRISCV_Processor_Design](https://github.com/user-attachments/assets/dcc678f6-0b28-4367-b9f4-be7b452577db) |
+| :------------------------------------: |
+|  Figure 10. Non-Pipelined Basic RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
