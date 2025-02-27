@@ -115,12 +115,12 @@
          // Below Basic Instruction Set Decode, 2 Read and 1 Write Register File
          
          ?$rs1_valid
-            $rf_rd_en1    = $rs1_valid;
-            $rf_rd_index1 = $rs1;
+            $rf_rd_en1         = $rs1_valid;
+            $rf_rd_index1[4:0] = $rs1[4:0];
             
          ?$rs2_valid
-            $rf_rd_en2    = $rs2_valid;
-            $rf_rd_index2 = $rs2;
+            $rf_rd_en2         = $rs2_valid;
+            $rf_rd_index2[4:0] = $rs2[4:0];
             
          $src1_value[31:0] = $rf_rd_data1;
          $src2_value[31:0] = $rf_rd_data2;
@@ -135,9 +135,9 @@
          $rf_wr_en = ($rd == 5'h0) ? 1'b0 : $rd_valid;
          
          ?$rf_wr_en
-            $rf_wr_index = $rd;
+            $rf_wr_index[4:0] = $rd[4:0];
             
-         $rf_wr_data  = $result;
+         $rf_wr_data[31:0]  = $result[31:0];
          
          // Branch Instructions Check
          
@@ -151,15 +151,16 @@
          
          // Branch Instruction Address Update
          
-         $br_tgt_pc = $pc + $imm;
+         $br_tgt_pc[31:0] = $pc + $imm;
+         
+         `BOGUS_USE($is_beq $is_bne $is_blt $is_bge $is_bltu $is_bgeu)
 
          // Limit Simulation Cycle and Test
          
-         *passed = *cyc_cnt > 10;
-         *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
-         *failed = 1'b0;
+   *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
+   *failed = 1'b0;
          
-         `BOGUS_USE($is_beq $is_bne $is_blt $is_bge $is_bltu $is_bgeu)
+
          
    |cpu
       m4+imem(@1)      // Args: (Read)
