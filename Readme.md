@@ -86,7 +86,7 @@ An Application Binary Interface (ABI) is a set of rules and conventions that def
 
 |![IM02 Load Program Interacts with C Program](https://github.com/user-attachments/assets/cd5e39ac-d2c7-4176-a145-bd29c0deceb0) |
 | :--------------------------------------------------: |
-|          Main Program Showing Execution of `load.S'     |
+|          Main Program Showing Execution of `load.S' Assembly Call    |
 
 # Digital Logic Design with Transaction Level Verilog
 
