@@ -507,3 +507,11 @@ The Program Counter is modified to calculate the branch address based on the imm
 |![IM02 Non-Pipelined Processor](https://github.com/user-attachments/assets/55ca5410-6c11-4e61-b6fd-db7c693ef43f) |
 | :------------------------------------: |
 |  Figure 10. Single Cycle RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
+
+# Pipelining the RISC-V CPU Micro-Architecture
+
+### Lab : Three-Stage Pipelined RISC-V Processor
+
+| ![IM01 Pipelined RISC-V Processor](https://github.com/user-attachments/assets/9641615f-fe71-41c4-a253-a609cc97dfea) |
+| :------------------------------------: |
+|  Figure 11. Three-Stage Pipelined RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
