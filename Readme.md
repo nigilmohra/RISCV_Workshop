@@ -549,6 +549,6 @@ The data memory has a similar implementation to the instruction memory. Uncommen
 
 # References and Acknowledgements
 
-[Steve Hoover](https://github.com/stevehoover) 
-[Kunal Ghosh](https://github.com/kunalg123) 
-[Shivani Shah](https://github.com/shivanishah269) 
+1. [Steve Hoover](https://github.com/stevehoover) 
+2. [Kunal Ghosh](https://github.com/kunalg123) 
+3. [Shivani Shah](https://github.com/shivanishah269) 
