@@ -82,7 +82,7 @@ An Application Binary Interface (ABI) is a set of rules and conventions that def
 
 | ![IM01 C Program and ISA Program Interact](https://github.com/user-attachments/assets/0dc5444d-117b-4d28-8d58-4e76447b109a) |
 | :--------------------------------------------------: |
-|          ASM and HLL (C Program) Codes      |
+|          Assembly Language and High-Level (C Program) Codes      |
 
 |![IM02 Load Program Interacts with C Program](https://github.com/user-attachments/assets/cd5e39ac-d2c7-4176-a145-bd29c0deceb0) |
 | :--------------------------------------------------: |
