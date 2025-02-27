@@ -72,7 +72,7 @@ _The explanation of the shell commands can be found on the internet. Lectures on
 
 # Introduction to Application Binary Interface (ABI)
 
-An **Application Binary Interface (ABI)** is a set of rules and conventions that dictate how different components of a program interact at the binary level. It serves as a bridge between different program modules or between the program and the operating system, ensuring that software components can work together despite being written in different programming languages, or compiled with different compilers. The ABI is for RV64I and helps in converting the relocatable machine code to absolute machine code. 
+An Application Binary Interface (ABI) is a set of rules and conventions that define how different components of a program interact at the binary level. It acts as an intermediary between various program modules or between the program and the operating system, ensuring seamless interoperability among software components, even when they are written in different programming languages or compiled with different compilers. Below is ABI symbolic register names for RV64I. 
 
 |![image](https://github.com/user-attachments/assets/9f4a7a5a-ba65-42b6-9af2-0d6b24d254fd) |
 | :--------------------------------------------------: |
