@@ -524,6 +524,8 @@ The **Structural Hazards** occur when the hardware resources required by multipl
 
 ### Lab : Pipelined RISC-V Processor
 
+Change the macro `m4+rf(@1, @1)` to `m4+rf(@2, @3)`. Add a `VALID_SIGNAL` to validate the instructions.
+ 
 | ![IM01 Pipelined RISC-V Processor](https://github.com/user-attachments/assets/9641615f-fe71-41c4-a253-a609cc97dfea) |
 | :------------------------------------: |
 |  Figure 11. Pipelined RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
