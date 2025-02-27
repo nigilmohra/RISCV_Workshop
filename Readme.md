@@ -531,9 +531,11 @@ Based on the RISC-V architecture in `D04_SLIDE37`, modify the pipeline design by
 | :------------------------------------: |
 |  Figure 11. Pipelined RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
 
+## Data Memory and Jump Instruction Support 
+
 ### Lab : Data Memory - Load and Store Instructions (Memory Access and Write-Back)
 
-The data memory has a similar implementation to the instruction memory. Uncomment the macro m4+dmem(@4). Add VALID_SIGNALS for load and store instructions to avoid data hazards.
+The data memory has a similar implementation to the instruction memory. Uncomment the macro `m4+dmem(@4)`. Add `VALID_SIGNALS` for load and store instructions to avoid data hazards.
 
 |![image](https://github.com/user-attachments/assets/b40088d1-4d24-41de-abe1-5548a9102efc) |
 | :------------------------------------: |
@@ -546,6 +548,7 @@ The data memory has a similar implementation to the instruction memory. Uncommen
 |  Figure 13. Five State Pipelined RISC-V Micro-Architecture - Makerchip IDE Output  |
 
 # References and Acknowledgements
+
 [Steve Hoover](https://github.com/stevehoover)
 [Kunal Ghosh](https://github.com/kunalg123)
 [Shivani Shah](https://github.com/shivanishah269)
