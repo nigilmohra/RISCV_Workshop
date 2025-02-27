@@ -228,6 +228,7 @@ The `ERROR_SIGNALS` are OR together to check the various error conditions that c
    *passed = *cyc_cnt > 10;
    *failed = 1'b0;
 ```
+
 |  ![IM04_Errors_Pipeline](https://github.com/user-attachments/assets/7f9a06bf-fe4c-481e-abf3-48bcb6f3c51e) |
 | :------------------------------------: |
 |   Figure 3. Errors in Pipeline During Computation - Makerchip IDE Output (Excercise)    |
@@ -529,3 +530,11 @@ Based on the RISC-V architecture in `D04_SLIDE37`, modify the pipeline design by
 | ![IM01 Pipelined RISC-V Processor](https://github.com/user-attachments/assets/9641615f-fe71-41c4-a253-a609cc97dfea) |
 | :------------------------------------: |
 |  Figure 11. Pipelined RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
+
+### Lab : Data Memory - Load and Store Instructions (Memory Access and Write-Back)
+
+The data memory has a similar implementation to the instruction memory. Uncomment the macro m4+dmem(@4). Add VALID_SIGNALS for load and store instructions to avoid data hazards.
+
+|![image](https://github.com/user-attachments/assets/b40088d1-4d24-41de-abe1-5548a9102efc) |
+| :------------------------------------: |
+|  Figure 12. Pipelined RISC-V Micro-Architecture with Load and Store Instruction Implementation - Makerchip IDE Output  |
