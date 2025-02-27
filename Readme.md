@@ -443,12 +443,12 @@ Use the decoded fields to write and read data to the registers. To generate the 
 // Below Basic Instruction Set Decode, Read
 
          ?$rs1_valid
-            $rf_rd_en1    = $rs1_valid;
-            $rf_rd_index1 = $rs1;
+            $rf_rd_en1         = $rs1_valid;
+            $rf_rd_index1[4:0] = $rs1[4:0];
             
          ?$rs2_valid
-            $rf_rd_en2    = $rs2_valid;
-            $rf_rd_index2 = $rs2;
+            $rf_rd_en2         = $rs2_valid;
+            $rf_rd_index2[4:0] = $rs2[4:0];
             
          $src1_value[31:0] = $rf_rd_data1;
          $src2_value[31:0] = $rf_rd_data2;
@@ -462,9 +462,9 @@ Use the decoded fields to write and read data to the registers. To generate the 
          $rf_wr_en = ($rd == 5'h0) ? 1'b0 : $rd_valid;
          
          ?$rf_wr_en
-            $rf_wr_index = $rd;
+            $rf_wr_index[4:0] = $rd[4:0];
             
-         $rf_wr_data  = $result;       
+         $rf_wr_data[31:0]  = $result[31:0];       
 ```
 
 ### Simple Arithmetic and Logic Unit (ALU) Design
@@ -499,11 +499,11 @@ The Program Counter is modified to calculate the branch address based on the imm
                      
          // Branch Instruction Address Update
          
-         $br_tgt_pc = $pc + $imm;
+         $br_tgt_pc[31:0] = $pc + $imm;
 ```
 
 ### Lab : Single-Cycle RISC-V32I Implementation
 
-|![IM_14_NPRISCV_Processor_Design](https://github.com/user-attachments/assets/dcc678f6-0b28-4367-b9f4-be7b452577db) |
+|![IM02 Non-Pipelined Processor](https://github.com/user-attachments/assets/55ca5410-6c11-4e61-b6fd-db7c693ef43f) |
 | :------------------------------------: |
 |  Figure 10. Single Cycle RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
