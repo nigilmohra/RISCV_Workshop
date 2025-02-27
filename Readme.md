@@ -549,6 +549,6 @@ The data memory has a similar implementation to the instruction memory. Uncommen
 
 # Acknowledgements
 
-1. [Steve Hoover](https://github.com/stevehoover) _Founder, Redwood EDA_
-2. [Kunal Ghosh](https://github.com/kunalg123) Co-founder, VSD Corp. Pvt. Ltd.
-3. [Shivani Shah](https://github.com/shivanishah269) Hardware Architect, Nvidia
+[Steve Hoover](https://github.com/stevehoover) Founder, Redwood EDA
+[Kunal Ghosh](https://github.com/kunalg123) Co-founder, VSD Corp. Pvt. Ltd.
+[Shivani Shah](https://github.com/shivanishah269) Hardware Architect, Nvidia
