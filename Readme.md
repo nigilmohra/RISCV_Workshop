@@ -3,7 +3,7 @@ This repository contains the documents, codes, and materials related to the RISC
 
 _The reference solutions for the lab and practices can be found in this_ [_Solution_](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/reference_solutions.tlv). _The solutions do not include code; they include only the design visualizations._
 
-# Introduction to RISC-V Instruction Set using GNU Compiler Tool Chain and Spike Simulator
+# Introduction to RISC-V Instruction Set using GNU Compiler Tool Chain and Spike Simulator | D01
 
 | ![Combined Picture](https://github.com/user-attachments/assets/177470e5-b616-44f9-9bcc-009d7b61a476) |
 | :--------------------------------------------------: |
