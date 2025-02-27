@@ -510,8 +510,8 @@ The Program Counter is modified to calculate the branch address based on the imm
 
 # Pipelining the RISC-V CPU Micro-Architecture
 
-### Lab : Three-Stage Pipelined RISC-V Processor
+### Lab : Pipelined RISC-V Processor
 
 | ![IM01 Pipelined RISC-V Processor](https://github.com/user-attachments/assets/9641615f-fe71-41c4-a253-a609cc97dfea) |
 | :------------------------------------: |
-|  Figure 11. Three-Stage Pipelined RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
+|  Figure 11. Pipelined RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
