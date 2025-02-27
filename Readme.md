@@ -510,6 +510,18 @@ The Program Counter is modified to calculate the branch address based on the imm
 
 # Pipelining the RISC-V CPU Micro-Architecture
 
+## Pipelining and Hazards
+
+Pipelining is done to improve the throughput of instruction execution by allowing multiple instructions to be processed simultaneously, but at different stages of execution. In a pipelined processor, the execution of an instruction is divided into several stages **Fetch, Decode, Execute, Memory Access and Write Back**. 
+
+While pipelining offers significant performance benefits, it also introduces some challenges like **Data Hazards, Control Hazards (Branch), Structural Hazards, Pipelined Stalls and Bubble Insertions**. 
+
+The **Data Hazards** occur when one instruction depends on the result of another instruction that has not completed its execution. **Read-after-Write (RAW)** is when an instruction reads data that is yet to be written by a previous instruction. **Write-after-Write (WAW)** is when two instructions write to the same register, but the write order must be preserved. **Write-after-Read (WAR)** is when a register is written to before it is read by a following instruction.
+
+The **Control Hazards** arise from branch instructions (conditional jumps), where the processor needs to determine the next instruction to execute. If a branch is mis-predicted, the pipeline must be flushed, and the correct instructions need to be fetched, resulting in a performance penalty.
+
+The **Structural Hazards** occur when the hardware resources required by multiple instructions in the pipeline conflict.
+
 ### Lab : Pipelined RISC-V Processor
 
 | ![IM01 Pipelined RISC-V Processor](https://github.com/user-attachments/assets/9641615f-fe71-41c4-a253-a609cc97dfea) |
