@@ -70,6 +70,10 @@ spike -d pk <OBJECT_FILE_NAME.o>
 
 _The explanation of the shell commands can be found on the internet. Lectures on signed and unsigned integers were viewed, but no notes were made._
 
+# Introduction to Application Binary Interface (ABI)
+
+An **Application Binary Interface (ABI)** is a set of rules and conventions that dictate how different components of a program interact at the binary level. It serves as a bridge between different program modules or between the program and the operating system, ensuring that software components can work together despite being written in different programming languages, or compiled with different compilers.
+
 # Digital Logic Design with Transaction Level Verilog
 
 For the initial simulation and design, the Makerchip IDE is used. Detailed explanations and guidance on using the IDE can be found here in this [Link](https://www.makerchip.com/sandbox/#)
