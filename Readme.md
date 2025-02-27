@@ -538,3 +538,14 @@ The data memory has a similar implementation to the instruction memory. Uncommen
 |![image](https://github.com/user-attachments/assets/b40088d1-4d24-41de-abe1-5548a9102efc) |
 | :------------------------------------: |
 |  Figure 12. Pipelined RISC-V Micro-Architecture with Load and Store Instruction Implementation - Makerchip IDE Output  |
+
+### Lab : Five Stage Pipelined RISC-V Processor (Complete Implementation)
+
+| ![image](https://github.com/user-attachments/assets/a427d703-db50-4f3a-b5ee-fc4996f5f6ac) |
+| :------------------------------------: |
+|  Figure 13. Five State Pipelined RISC-V Micro-Architecture - Makerchip IDE Output  |
+
+# References and Acknowledgements
+[Steve Hoover](https://github.com/stevehoover)
+[Kunal Ghosh](https://github.com/kunalg123)
+[Shivani Shah](https://github.com/shivanishah269)
