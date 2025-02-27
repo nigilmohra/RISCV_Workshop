@@ -1,4 +1,4 @@
-![IM01 C Program and ISA Program Interact](https://github.com/user-attachments/assets/5d81f4ba-973b-4b43-ad47-68639aa26b0f)# RISC-V Design using Transaction-Level Verilog 
+# RISC-V Design using Transaction-Level Verilog 
 This repository contains the documents, codes, and materials related to the RISC-V-based MYTH workshop, organized by NASSCOM India in collaboration with Steve Hoover and Kunal Ghosh. 
 
 _The reference solutions for the lab and practices can be found in this_ [_Solution_](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/reference_solutions.tlv). _The solutions do not include code; they include only the design visualizations._
