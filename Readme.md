@@ -547,7 +547,7 @@ The data memory has a similar implementation to the instruction memory. Uncommen
 | :------------------------------------: |
 |  Figure 13. Five State Pipelined RISC-V Micro-Architecture - Makerchip IDE Output  |
 
-# Acks
+# Acknowledgments
 
 1. [Steve Hoover](https://github.com/stevehoover) Founder, Redwood EDA             
 2. [Kunal Ghosh](https://github.com/kunalg123) Co-founder, VSD Corp. Pvt. Ltd.     
