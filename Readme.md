@@ -325,6 +325,7 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
       @1
          $instr[31:0] = $imem_rd_data[31:0];
 ```
+
 | ![IM09_Fetch_PC_InMem](https://github.com/user-attachments/assets/a1d4988a-09be-4f58-ac49-0c194d49a4b0) |
 | :------------------------------------: |
 |   Figure 8. Fetch Address from Program Counter and Instruction Data - Makechip IDE Output    |
@@ -432,7 +433,7 @@ Form `$imm[31:0]` based on the instruction type.
 
 Use the decoded fields to write and read data to the registers. To generate the register file, uncomment the macro `m4+rf (@1, @1)`.
 
-|![Register File Design](https://github.com/user-attachments/assets/16b90172-7c21-4dae-86b0-19791497f5c3) |
+|![IM03 Read and Write Register File](https://github.com/user-attachments/assets/a281cd12-8edf-4bf2-acc8-a65875e74f4c) |
 | :------------------------------------: |
 |  Dual-Read and Single Write Register File  |
 
