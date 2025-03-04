@@ -3,7 +3,7 @@ This repository contains the documents, codes, and materials related to the RISC
 
 _The reference solutions for the lab and practices can be found in this_ [_Solution_](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/reference_solutions.tlv). _The solutions do not include code; they include only the design visualizations._
 
-# Introduction to RISC-V Instruction Set using GNU Compiler Tool Chain and Spike Simulator
+# 1. Introduction to RISC-V Instruction Set using GNU Compiler Tool Chain and Spike Simulator
 
 | ![Combined Picture](https://github.com/user-attachments/assets/177470e5-b616-44f9-9bcc-009d7b61a476) |
 | :--------------------------------------------------: |
@@ -17,7 +17,7 @@ The **Spike Simulator** is an **Instruction Set Simulator** specifically design 
 
 Create a small `C` program that performs the addition of numbers from 1 to `N`. Run the program using the commands `gcc <FILE_NAME.c>` and `./a.out`.
 
-## Generate RISC-V Object File
+## 1.1. Generate RISC-V Object File
 
 Either one of the above two codes can be used to generate the object file. 
 
@@ -29,7 +29,7 @@ riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <C_P
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <OBJECT_FILE_NAME.o> <C_PRG_FILE_NAME.c>
 ```
 
-## Assembly Code
+## 1.2. Assembly Code
 
 The first command provides an extended version of the assembly code. The second command will provide a `piped` version of the code.
 
@@ -46,7 +46,7 @@ riscv64-unknown-elf-objdump -d sum.o | less
 |           Assembly Language Codes - Sum of 'N' Numbers (-Ofast)        |
 
 
-## Debugging - Spike Simulator
+## 1.3. Debugging - Spike Simulator
 
 The Spike simulator is invoked using the spike disassemble command. By using the `until` command, the program can be executed starting from a particular address. Pressing `ENTER` executes the consecutive steps. The updates to the registers can be viewed using the `reg` command. 
 
@@ -70,7 +70,7 @@ spike -d pk <OBJECT_FILE_NAME.o>
 
 _The explanation of the shell commands can be found on the internet. Lectures on signed and unsigned integers were viewed, but no notes were made._
 
-# Introduction to Application Binary Interface (ABI)
+# 2. Introduction to Application Binary Interface (ABI)
 
 An Application Binary Interface (ABI) is a set of rules and conventions that define how different components of a program interact at the binary level. It acts as an intermediary between various program modules or between the program and the operating system, ensuring seamless interoperability among software components, even when they are written in different programming languages or compiled with different compilers. Below is ABI symbolic register names for RV64I. 
 
@@ -88,13 +88,13 @@ An Application Binary Interface (ABI) is a set of rules and conventions that def
 | :--------------------------------------------------: |
 |          Main Program Showing Execution of `load.S' Assembly Call    |
 
-# Digital Logic Design with Transaction Level Verilog
+# 3. Digital Logic Design with Transaction Level Verilog
 
 For the initial simulation and design, the Makerchip IDE is used. Detailed explanations and guidance on using the IDE can be found here in this [Link](https://www.makerchip.com/sandbox/#)
 
 Note that the Makerchip IDE platform does not recognize `TAB` for indentation; instead, use three spaces for indentation. `CTRL + ]` is used to indent the code to the right, and `CTRL + [` is used to indent the code to the left. Also, note that in TL-Verilog, using `*reset` refers to SystemVerilog code defined in macros.
 
-## Combinational Logic
+## 3.1. Combinational Logic
 
 As a standard approach for learning any hardware description language, the process starts with the implementation of basic logic gates. The logical operators are similar to those in Verilog, with the primary difference being that there is no need for explicit declaration of the inputs and outputs. 
 
@@ -112,7 +112,7 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
 |           Figure 1. Combinational Calculator - Makerchip IDE Output          |
 
 
-## Sequential Logic
+## 3.2. Sequential Logic
 
 Once the combinational circuits are completed, the next step is to move on to the sequential circuits. A basic Fibonacci series is provided as an example for the sequential circuits. The circuit is constructed such that it enters the known state when a `RESET` signal is present. For the Fibonacci code, the known state is `1`. The syntax `>>1` provides the previous value of `$val`, and `>>2` provides the value of `$val` two states prior. Similarly, `>>x` will provide the value of `$val` `x` cycles prior.
 
@@ -151,7 +151,7 @@ _The Makerchip IDE uses the open-source Verilator for simulation. It supports on
 | :--------------------------------------------------: |
 |           Figure 2. Sequential Calculator - Makerchip IDE Output          |
 
-## Pipelined Logic
+## 3.3. Pipelined Logic
 
 Transaction-Level Verilog allows modeling of a design as timing abstracts. The following is a pipeline implementation of the **32-Bit Pythagorean Theorem**, which uses the timing-abstract concept. The green lines represent registers.
 
@@ -174,7 +174,7 @@ Transaction-Level Verilog allows modeling of a design as timing abstracts. The f
 
 Stage one can be divided into two separate stages without affecting the behavior of the circuit. The pipeline stages are a physical attribute. TL-Verilog offers greater flexibility than SystemVerilog and helps avoid retiming issues.
 
-### Retiming the Pipeline : Pythagorean Theorem Example
+### 3.3.1. Retiming the Pipeline : Pythagorean Theorem Example
 
 ```Verilog
 \TLV
@@ -196,7 +196,7 @@ Stage one can be divided into two separate stages without affecting the behavior
 | :------------------------------------: |
 |   Architecture - A Retimed Pipeline    |
 
-### Identifiers and Types (Misc)
+### 3.3.2. Identifiers and Types (Misc)
 
 The type of an identifier is determined by its symbol prefix and case/delimitation style. The first token must always start with two alphabet characters. Numbers cannot appear at the beginning of the tokens; they can only be at the end or in the middle. This should not be confused with number identifiers like `>>1`.
 
@@ -235,13 +235,13 @@ The `ERROR_SIGNALS` are OR together to check the various error conditions that c
 
 ### Lab : Two-Cycle Calculator (Pipeline)
 
-The calculation happens in the first cycle, and in the second cycle, the outputs are assigned based on the `VALID SIGNAL`, which is determined by `$reset | !cnt`.
+The calculation happens in the first cycle, and in the second cycle, the outputs are assigned based on the `VALID SIGNAL`, which is determined by `$reset | !cnt`
 
 | ![IM05_Pipelined_Calculator](https://github.com/user-attachments/assets/0cc3b070-6d5b-4678-8a38-3d02605f35d9) |
 | :------------------------------------: |
 |   Figure 4. Two-Cycle (Pipelined) Calculator - Makechip IDE Output    |
 
-## Structure of TL-Verilog Code (Misc)
+## 3.4. Structure of TL-Verilog Code (Misc)
 
 ```
 \m4_TLV_version 1d: t1-x.org
@@ -249,7 +249,7 @@ The calculation happens in the first cycle, and in the second cycle, the outputs
 
 The above line specifies the version of TL-Verilog, and `tl-x.org` provides the documentation link. `M4` is a macro language, which, when used, expands in the navigation window of the Maker chip IDE, defining the input, output, clock, and reset signals of the module.
 
-## Validity
+## 3.5. Validity
 
 Validity offers easier debugging, cleaner design, better error checking, and automated clock gating. It allows Sandpiper to inject `DONT_CARES` when the inputs are not valid. The syntax of valid is `?$valid`.
 
@@ -298,13 +298,13 @@ A `VALID` signal is used to determine whether the distance is valid. If it is no
 
 *Lecture on Brief introduction on Hierarchy and Lexical Re-entrance using Conway's Game of Life is Skipped.*
 
-# Basic RISC-V CPU Micro-Architecture
+# 4. Basic RISC-V CPU Micro-Architecture
 
 The [RISC-V Shell](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/risc-v_shell.tlv) can be found in the GitHub repository by Steve Hoover. 
 
-## Fetch Address and Instruction
+## 4.1. Fetch Address and Instruction
 
-### Program Counter and Instruction Memory
+### 4.1.1. Program Counter and Instruction Memory
 
 ```Verilog
 \TLV
@@ -331,9 +331,9 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
 | :------------------------------------: |
 |   Figure 8. Fetch Address from Program Counter and Instruction Data - Makechip IDE Output    |
 
-## Decode Instructions
+## 4.2. Decode Instructions
 
-### Decode Instruction Type
+### 4.2.1. Decode Instruction Type
 
 `instr[6:2]` determines instruction type: I, R, S, B, J and U. **The simple idea behind instruction decode logic design is to eliminate common cases between different instructions and create instances that identify the type of instruction based on their differences. For example, the difference can be a single bit, which can be represented as don't-cares**.
 
@@ -352,7 +352,7 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
          $is_j_instr = $instr[6:2] == 5'b11011;
 ```
 
-### Decode Immediate Instructions
+### 4.2.2. Decode Immediate Instructions
 
 Form `$imm[31:0]` based on the instruction type.
 
@@ -371,7 +371,7 @@ Form `$imm[31:0]` based on the instruction type.
                       32'b0;        
 ```
 
-### Decode - Extracting Instruction Fields
+### 4.2.3. Decode - Extracting Instruction Fields
 
 | ![IM11_Extract_Instruction_Fields](https://github.com/user-attachments/assets/7872a044-c2e9-47cf-bd85-0763194185c3) |
 | :------------------------------------: |
@@ -404,7 +404,7 @@ Form `$imm[31:0]` based on the instruction type.
             $funct7[6:0] = $instr[31:25];
 ```
 
-### Decode Individual Instructions
+### 4.2.4. Decode Individual Instructions
 
 |<img width="959" alt="RISC-V Basic Instruction Set" src="https://github.com/user-attachments/assets/b54373f7-7e29-477e-9a81-86cc220bc74d" />|
 | :------------------------------------: |
@@ -430,7 +430,7 @@ Form `$imm[31:0]` based on the instruction type.
 | :------------------------------------: |
 |  Figure 9. RISCV-32 Fetch and Decode Implementation - Makerchip IDE Output   |
 
-### Register File Read and Write
+### 4.2.5. Register File Read and Write
 
 Use the decoded fields to write and read data to the registers. To generate the register file, uncomment the macro `m4+rf (@1, @1)`.
 
@@ -468,7 +468,7 @@ Use the decoded fields to write and read data to the registers. To generate the 
          $rf_wr_data[31:0]  = $result[31:0];       
 ```
 
-### Simple Arithmetic and Logic Unit (ALU) Design
+### 4.2.6. Simple Arithmetic and Logic Unit (ALU) Design
 
 ```Verilog
          // Arithmetic and Logic Unit, Below Register File
@@ -478,7 +478,7 @@ Use the decoded fields to write and read data to the registers. To generate the 
          
 ```
 
-### Branch Instructions
+### 4.2.7. Branch Instructions
 
 The Program Counter is modified to calculate the branch address based on the immediate value. If the `TAKEN_BRANCH` is high, the Program Counter is updated with the branch address; otherwise, the address is incremented by 4 by default.
 
@@ -509,9 +509,9 @@ The Program Counter is modified to calculate the branch address based on the imm
 | :------------------------------------: |
 |  Figure 10. Single Cycle RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
 
-# Pipelining the RISC-V CPU Micro-Architecture
+# 5. Pipelining the RISC-V CPU Micro-Architecture
 
-## Pipelining and Hazards
+## 5.1. Pipelining and Hazards
 
 Pipelining is done to improve the throughput of instruction execution by allowing multiple instructions to be processed simultaneously, but at different stages of execution. In a pipelined processor, the execution of an instruction is divided into several stages **Fetch, Decode, Execute, Memory Access and Write Back**. 
 
@@ -531,7 +531,7 @@ Based on the RISC-V architecture in `D04_SLIDE37`, modify the pipeline design by
 | :------------------------------------: |
 |  Figure 11. Pipelined RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
 
-## Data Memory and Jump Instruction Support 
+## 5.2. Data Memory and Jump Instruction Support 
 
 ### Lab : Data Memory - Load and Store Instructions (Memory Access and Write-Back)
 
