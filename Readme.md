@@ -46,7 +46,7 @@ riscv64-unknown-elf-objdump -d sum.o | less
 |           Assembly Language Codes - Sum of 'N' Numbers (-Ofast)        |
 
 
-## 1.3. Debugging - Spike Simulator
+## 1.3. GNU RISC-V Toolchain - Spike Simulator (Debugging)
 
 The Spike simulator is invoked using the spike disassemble command. By using the `until` command, the program can be executed starting from a particular address. Pressing `ENTER` executes the consecutive steps. The updates to the registers can be viewed using the `reg` command. 
 
