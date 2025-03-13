@@ -109,7 +109,7 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
 
 | ![IM01_Combinational_Calculator](https://github.com/user-attachments/assets/690332f4-02eb-4093-8dc1-a52af1964cc0) |
 | :--------------------------------------------------: |
-|           Figure 1. Combinational Calculator - Makerchip IDE Output          |
+|          _ Figure 1. Combinational Calculator - Makerchip IDE Output _         |
 
 
 ## 3.2. Sequential Logic
@@ -149,7 +149,7 @@ _The Makerchip IDE uses the open-source Verilator for simulation. It supports on
 
 | ![IM03_Sequential_Calculator](https://github.com/user-attachments/assets/cada27b6-bcb6-45d5-adfb-75f9a026231d) |
 | :--------------------------------------------------: |
-|           Figure 2. Sequential Calculator - Makerchip IDE Output          |
+|           _Figure 2. Sequential Calculator - Makerchip IDE Output _         |
 
 ## 3.3. Pipelined Logic
 
@@ -231,7 +231,7 @@ The `ERROR_SIGNALS` are OR together to check the various error conditions that c
 
 |  ![IM04_Errors_Pipeline](https://github.com/user-attachments/assets/7f9a06bf-fe4c-481e-abf3-48bcb6f3c51e) |
 | :------------------------------------: |
-|   Figure 3. Errors in Pipeline During Computation - Makerchip IDE Output (Excercise)    |
+|   _Figure 3. Errors in Pipeline During Computation - Makerchip IDE Output (Excercise)_    |
 
 ### Lab : Two-Cycle Calculator (Pipeline)
 
@@ -239,7 +239,7 @@ The calculation happens in the first cycle, and in the second cycle, the outputs
 
 | ![IM05_Pipelined_Calculator](https://github.com/user-attachments/assets/0cc3b070-6d5b-4678-8a38-3d02605f35d9) |
 | :------------------------------------: |
-|   Figure 4. Two-Cycle (Pipelined) Calculator - Makechip IDE Output    |
+|   _Figure 4. Two-Cycle (Pipelined) Calculator - Makechip IDE Output_    |
 
 ## 3.4. Structure of TL-Verilog Code (Misc)
 
@@ -280,7 +280,7 @@ Validity offers easier debugging, cleaner design, better error checking, and aut
 
 | ![IM07_Total_Distance](https://github.com/user-attachments/assets/38d13a7d-51af-4764-a600-0be68a41b0e7) |
 | :------------------------------------: |
-|   Figure 5. Total Distance Accumulator - Makechip IDE Output    |
+|  _ Figure 5. Total Distance Accumulator - Makechip IDE Output_  |
 
 A `VALID` signal is used to determine whether the distance is valid. If it is not valid, the previous value of the distance is held. 
 
@@ -288,13 +288,13 @@ A `VALID` signal is used to determine whether the distance is valid. If it is no
 
 | ![IM08_Calculator_Validated](https://github.com/user-attachments/assets/63dd24f1-b368-4240-8841-477e45bbd24d) | 
 | :------------------------------------: |
-|   Figure 6. Pipelined Calculator with Validity Condition - Makechip IDE Output    |
+|   _Figure 6. Pipelined Calculator with Validity Condition - Makechip IDE Output_    |
 
 ### Lab : Calculator with Single-Value Memory
 
 | ![IM06_Memory_Calculator](https://github.com/user-attachments/assets/21389f6a-2659-4470-ad7c-20234db75e23) |
 | :------------------------------------: |
-|   Figure 7. Pipelined Calculator with Single Value Memory - Makechip IDE Output    |
+|   _Figure 7. Pipelined Calculator with Single Value Memory - Makechip IDE Output_    |
 
 *Lecture on Brief introduction on Hierarchy and Lexical Re-entrance using Conway's Game of Life is Skipped.*
 
@@ -329,7 +329,7 @@ For designing the instruction memory uncomment the macros `m4+imem(@1)` and `m4+
 
 | ![IM09_Fetch_PC_InMem](https://github.com/user-attachments/assets/a1d4988a-09be-4f58-ac49-0c194d49a4b0) |
 | :------------------------------------: |
-|   Figure 8. Fetch Address from Program Counter and Instruction Data - Makechip IDE Output    |
+|   _Figure 8. Fetch Address from Program Counter and Instruction Data - Makechip IDE Output_    |
 
 ## 4.2. Decode Instructions
 
@@ -428,7 +428,7 @@ Form `$imm[31:0]` based on the instruction type.
 
 |![IM13_RISCV_Fetch_Decode_Logics](https://github.com/user-attachments/assets/4dc26133-68d1-4510-9d61-55f0e6af015e)|
 | :------------------------------------: |
-|  Figure 9. RISCV-32 Fetch and Decode Implementation - Makerchip IDE Output   |
+|  _Figure 9. RISCV-32 Fetch and Decode Implementation - Makerchip IDE Output_   |
 
 ### 4.2.5. Register File Read and Write
 
@@ -507,7 +507,7 @@ The Program Counter is modified to calculate the branch address based on the imm
 
 |![IM02 Non-Pipelined Processor](https://github.com/user-attachments/assets/55ca5410-6c11-4e61-b6fd-db7c693ef43f) |
 | :------------------------------------: |
-|  Figure 10. Single Cycle RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
+|  _Figure 10. Single Cycle RISC-V Micro-Architecture Implementation - Makerchip IDE Output_  |
 
 # 5. Pipelining the RISC-V CPU Micro-Architecture
 
@@ -529,7 +529,7 @@ Based on the RISC-V architecture in `D04_SLIDE37`, modify the pipeline design by
  
 | ![IM01 Pipelined RISC-V Processor](https://github.com/user-attachments/assets/9641615f-fe71-41c4-a253-a609cc97dfea) |
 | :------------------------------------: |
-|  Figure 11. Pipelined RISC-V Micro-Architecture Implementation - Makerchip IDE Output  |
+|  _Figure 11. Pipelined RISC-V Micro-Architecture Implementation - Makerchip IDE Output_  |
 
 ## 5.2. Data Memory and Jump Instruction Support 
 
@@ -539,13 +539,13 @@ The data memory has a similar implementation to the instruction memory. Uncommen
 
 |![image](https://github.com/user-attachments/assets/b40088d1-4d24-41de-abe1-5548a9102efc) |
 | :------------------------------------: |
-|  Figure 12. Pipelined RISC-V Micro-Architecture with Load and Store Instruction Implementation - Makerchip IDE Output  |
+|  _Figure 12. Pipelined RISC-V Micro-Architecture with Load and Store Instruction Implementation - Makerchip IDE Output_  |
 
 ### Lab : Five Stage Pipelined RISC-V Processor (Complete Implementation)
 
 | ![image](https://github.com/user-attachments/assets/a427d703-db50-4f3a-b5ee-fc4996f5f6ac) |
 | :------------------------------------: |
-|  Figure 13. Five State Pipelined RISC-V Micro-Architecture - Makerchip IDE Output  |
+|  _Figure 13. Five State Pipelined RISC-V Micro-Architecture - Makerchip IDE Output_  |
 
 # Acknowledgments
 
