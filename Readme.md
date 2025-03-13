@@ -109,7 +109,7 @@ $out[7:0] = $sel ? $in1[7:0] : $in2[7:0]
 
 | ![IM01_Combinational_Calculator](https://github.com/user-attachments/assets/690332f4-02eb-4093-8dc1-a52af1964cc0) |
 | :--------------------------------------------------: |
-|          _ Figure 1. Combinational Calculator - Makerchip IDE Output _         |
+|          _Figure 1. Combinational Calculator - Makerchip IDE Output_         |
 
 
 ## 3.2. Sequential Logic
@@ -149,7 +149,7 @@ _The Makerchip IDE uses the open-source Verilator for simulation. It supports on
 
 | ![IM03_Sequential_Calculator](https://github.com/user-attachments/assets/cada27b6-bcb6-45d5-adfb-75f9a026231d) |
 | :--------------------------------------------------: |
-|           _Figure 2. Sequential Calculator - Makerchip IDE Output _         |
+|           _Figure 2. Sequential Calculator - Makerchip IDE Output_         |
 
 ## 3.3. Pipelined Logic
 
@@ -280,7 +280,7 @@ Validity offers easier debugging, cleaner design, better error checking, and aut
 
 | ![IM07_Total_Distance](https://github.com/user-attachments/assets/38d13a7d-51af-4764-a600-0be68a41b0e7) |
 | :------------------------------------: |
-|  _ Figure 5. Total Distance Accumulator - Makechip IDE Output_  |
+|  _Figure 5. Total Distance Accumulator - Makechip IDE Output_  |
 
 A `VALID` signal is used to determine whether the distance is valid. If it is not valid, the previous value of the distance is held. 
 
