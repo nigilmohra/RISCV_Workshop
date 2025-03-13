@@ -304,7 +304,8 @@
 
          `BOGUS_USE($is_beq $is_bne $is_blt $is_bge $is_bltu $is_bgeu)
 
-         // Limit Simulation Cycle and Test
+   // Limit Simulation Cycle and Test
+
    *passed = *cyc_cnt > 60;      
    *passed = |cpu/xreg[17]>>5$value == (1+2+3+4+5+6+7+8+9);
    *failed = 1'b0;
