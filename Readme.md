@@ -521,7 +521,7 @@ The **Control Hazards** arise from branch instructions (conditional jumps), wher
 
 The **Structural Hazards** occur when the hardware resources required by multiple instructions in the pipeline conflict.
 
-### Lab : Pipelined RISC-V Processor
+#### Lab : Pipelined RISC-V Processor
 
 Based on the RISC-V architecture in `D04_SLIDE37`, modify the pipeline design by changing the macro `m4+rf(@1, @1)` to `m4+rf(@2, @3)`. Additionally, add a `VALID_SIGNAL` to validate the instructions.
  
