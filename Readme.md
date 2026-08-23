@@ -296,7 +296,7 @@ A `VALID` signal is used to determine whether the distance is valid. If it is no
 
 *Lecture on Brief introduction on Hierarchy and Lexical Re-entrance using Conway's Game of Life is Skipped.*
 
-# 4. Basic RISC-V CPU Micro-Architecture
+## 4. Basic RISC-V CPU Micro-Architecture
 
 The [RISC-V Shell](https://github.com/stevehoover/RISC-V_MYTH_Workshop/blob/master/risc-v_shell.tlv) can be found in the GitHub repository by Steve Hoover. 
 
